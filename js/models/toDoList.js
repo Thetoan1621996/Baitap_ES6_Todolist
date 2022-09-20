@@ -1,5 +1,5 @@
 import { Donelist } from "./doneList.js";
-let listDone = new Donelist();
+export let listDone = new Donelist();
 export class Todo {
   arrToDo = [];
   // Thêm task mới

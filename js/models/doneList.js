@@ -16,10 +16,8 @@ export class Donelist {
   
   // Xóa việc đã làm xong trong arrDone
   xoaTaskFinished(newTask) {
-    console.log(this.arrDone)
-    let newDone =this.arrDone.filter((taskDone) => taskDone.newTask !== newTask);
-    console.log(newDone);
-    this.arrDone = [...newDone]
+    let newArrDone = this.arrDone.filter((task) => task.newTask !== newTask);
+    this.arrDone = [...newArrDone]   
   }
 
   renderDone(selectorDone) {

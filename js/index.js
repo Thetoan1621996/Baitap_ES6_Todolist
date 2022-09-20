@@ -1,9 +1,7 @@
-import { Donelist } from "./models/doneList.js";
 import { Newtask } from "./models/newTask.js";
 import { Todo } from "./models/toDoList.js";
-
+import { listDone } from "./models/toDoList.js";
 let todo = new Todo();
-let done = new Donelist();
 
 document.querySelector("#addItem").onclick = function () {
   // Tạo ra đối tượng new task để hứng nội dung người dùng nhập
@@ -28,15 +26,15 @@ window.deleteTask = (taskClick) => {
   todo.hienThiTask("#todo");
 };
 window.deleteTaskDone = (taskDoneClick) => {
-  done.xoaTaskFinished(taskDoneClick);
-  done.luuTaskDone();
-  done.renderDone("#completed");
+  listDone.xoaTaskFinished(taskDoneClick);
+  listDone.luuTaskDone();
+  listDone.renderDone("#completed");
 };
 window.onload = function () {
   todo.layTask();
   todo.hienThiTask("#todo");
-  done.layTaskDone();
-  done.renderDone("#completed");
+  listDone.layTaskDone();
+  listDone.renderDone("#completed");
 };
 document.querySelector("#two").onclick = function () {
   todo.sortAtoZ();
